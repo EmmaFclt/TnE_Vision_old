@@ -9,6 +9,7 @@ gem 'puma'
 gem 'rails', '6.0.2'
 gem 'redis'
 gem "chartkick"
+gem 'highcharts-rails', '~> 6.0', '>= 6.0.3'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
