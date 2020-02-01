@@ -41,14 +41,15 @@ ActiveRecord::Schema.define(version: 2020_02_01_152834) do
     t.string "contact_email"
     t.string "address"
     t.string "logo"
+    t.string "source"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "reports", force: :cascade do |t|
     t.string "format"
-    t.date "submission_date"
     t.string "source"
+    t.date "submission_date"
     t.bigint "company_id"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
