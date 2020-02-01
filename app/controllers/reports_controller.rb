@@ -7,6 +7,14 @@ class ReportsController < ApplicationController
   def create
     @report = Report.new(report_params)
     @report.user = current_user
+    @report.company = current_user.company
+    p @report.valid?
+    p @report.errors
+    if @report.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def index
@@ -22,6 +30,6 @@ class ReportsController < ApplicationController
   private
 
   def report_params
-    params.require(:report).permit(:format, :submission_date, :source)
+    params.require(:report).permit(:format, :submission_date, :source, :file)
   end
 end
