@@ -4,5 +4,5 @@ class Company < ApplicationRecord
   has_many :transactions, through: :reports
 
   validates :name, presence: true
-  validates :adress, presence: true
+  validates :address, presence: true
 end
