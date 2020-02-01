@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  root to: 'devise/sessions#new'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :reports, only: %i[create] do
-   resources :transactions, only: %i[create]
- end
+  resources :reports, only: %i[new, create, index, destroy]
+  get 'dashboard', to: 'pages#dashboard', as: :dashboard
+
 end
